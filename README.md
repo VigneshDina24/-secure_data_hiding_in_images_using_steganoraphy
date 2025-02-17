@@ -1,7 +1,7 @@
 I have created an encrypted image by using steganography
 
-**the secret code**: This is message we want to lock
-and  the **passkey** is 123456
+**the secret code**: Dreams are not the ones that comes when you sleep, Dreams are the ones that don't let you sleep.
+and  the **passkey** is dreams0001
 for this project
 
 
