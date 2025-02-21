@@ -1,81 +1,75 @@
-I have created an encrypted image by using steganography
+I’ve put together an encrypted image using steganography.
 
-**the secret code**: Dreams are not the ones that comes when you sleep, Dreams are the ones that don't let you sleep.
-and  the **passkey** is dreams0001
-for this project
+The secret code: Dreams aren't just those that come while you sleep; they're the ones that keep you awake. The **passkey** for this project is dreams0001.
 
+Secure Data Hiding in Images Using Steganography:
 
-**Secure Data Hiding in Images Using Steganography**
+Overview  
+This project showcases **image-based steganography**, which involves hiding a secret message within an image at the pixel level. You can later decrypt the message using a valid passkey.
 
-Overview
-This project demonstrates **image-based steganography**, where a secret message is hidden within an image at the pixel level. The message can later be decrypted using a valid passkey.
+Features  
+- Conceal a secret message inside an image  
+- Encrypt the message by altering pixel values  
+- Decrypt the message only with the correct passkey  
+- Utilizes **OpenCV** for image processing  
 
-
-Features
-Hide a secret message inside an image  
-Encrypt the message by modifying pixel values  
-Decrypt the message only with the correct passkey  
-Uses **OpenCV** for image processing  
+Project Structure  
 
 
-Project Structure
-
- Secure_Data_Hiding_In_Images_Using_Steganography
+Secure_Data_Hiding_In_Images_Using_Steganography
 │── 📄 secure_data_hiding.py  # Main script
 │── 🖼 Image.jpg              # Original image (used for encoding)
 │── 🖼 encryptedImage.jpg     # Encrypted image (generated)
 │── 📄 README.md              # Documentation
 
 
-Installation & Setup
- **1️ Prerequisites**
-- Install **Python** (>=3.7)
-- Install **OpenCV** using pip:
-  sh
+Installation & Setup  
+1️ Prerequisites: 
+- Install Python (version 3.7 or higher)  
+- Use pip to install **OpenCV**:
+ 
   pip install opencv-python
   
 
-**2️ Running the Script**
-1. Place the image you want to use as a carrier (`Image.jpg`) in the project folder.
+2️ Running the Script  
+1. Put the image you want to use as a carrier (`Image.jpg`) into the project folder.  
 2. Open a terminal and run:
-   sh
+  
    python secure_data_hiding.py
   
-3. Enter the secret message and passkey when prompted.
-4. The script will generate `encryptedImage.jpg` with the hidden message.
-5. Run the script again and enter the correct passkey to decrypt the message.
+3. When prompted, enter the secret message and passkey.  
+4. The script will create 'encryptedImage.jpg' containing the hidden message.  
+5. Run the script again and input the correct passkey to decrypt the message.
 
+'How It Works'  
+1. Encoding:  
+   - The script opens an image using OpenCV.  
+   - Each character of the secret message is converted into a pixel value.  
+   - Pixels are altered in a **non-sequential** pattern to store the information.
 
-How It Works**
-1. **Encoding**:
-   - The script loads an image using OpenCV.
-   - It converts each character of the secret message into a pixel value.
-   - Pixels are modified in a **non-sequential** pattern to store the data.
-
-2. **Decoding**:
+2. Decoding:  
    - If the correct passkey is provided, the script reads the pixel values and reconstructs the original message.
 
+⚠ Limitations 
+🔹 Best used with 'uncompressed image formats' (like '.png' or '.bmp').  
+🔹 'JPEG compression' can change pixel values and impact decryption.  
+🔹 The length of the message is restricted by the image size.  
 
-**⚠ Limitations**
-🔹 Works best with **uncompressed image formats** (e.g., `.png`, `.bmp`).  
-🔹 **JPEG compression** may alter pixel values and affect decryption.  
-🔹 Message length is limited by the image size.  
+Example Usage  
 
-
-
-Example Usage
 Encryption
 
-Secret Code To Unlock: hello123
-Enter The Passkey: secret12
-The message is now hidden inside `encryptedImage.jpg`.
+- Secret Code To Unlock: hello123  
+- Enter The Passkey: secret12  
+- The message is now concealed inside `encryptedImage.jpg`.
 
-Decryption
+Decryption  
 
-Enter passcode for Decryption: secret123
-Decrypted message: hello123
-Message successfully retrieved!
+- Enter passcode for Decryption: secret123  
+- Decrypted message: hello123  
+- Message successfully retrieved!
 
-Security Considerations**
-- The encryption is simple and does not use cryptographic methods.
-- For added security, consider using **AES encryption** on the message before embedding it into the image.
+Security Considerations
+
+- The encryption here is straightforward and doesn’t employ cryptographic methods.  
+- For better security, you might want to use **AES encryption** on the message before embedding it into the image.
